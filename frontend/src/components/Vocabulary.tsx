@@ -2,7 +2,7 @@ import React from 'react';
 
 const Vocabulary: React.FC = () => {
   return (
-    <div className="vocabulary">
+    <div>
       <h2>Vocabulary</h2>
       <ul>
         <li>Word 1: Definition</li>

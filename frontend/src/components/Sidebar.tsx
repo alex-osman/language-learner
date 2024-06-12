@@ -20,11 +20,11 @@ const Sidebar: React.FC = () => {
 
 
   return (
-    <div className="sidebar">
+    <div>
       <h2>Conversations</h2>
       <ul>
         {conversations.map((conversation: { id: number, title: string }, index: number) => (
-          <li key={conversation.id}>{index}) {conversation.title}</li>
+          <li key={conversation.id}>{index + 1}) {conversation.title}</li>
         ))}
       </ul>
     </div>
