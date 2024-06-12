@@ -22,13 +22,17 @@ router.post('/register', async (req: Request, res: Response) => {
 router.post('/login', async (req: Request, res: Response) => {
   const { username, password } = req.body;
   try {
-    const user = await pool.query('SELECT * FROM users WHERE username = $1', [username]);
+    const user = await pool.query('SELECT * FROM users WHERE username = $1', [
+      username,
+    ]);
     if (user.rows.length === 0) return res.status(400).send('User not found');
 
     const isMatch = await bcrypt.compare(password, user.rows[0].password);
     if (!isMatch) return res.status(400).send('Invalid credentials');
 
-    const token = jwt.sign({ id: user.rows[0].user_id }, 'your_jwt_secret', { expiresIn: '1h' });
+    const token = jwt.sign({ id: user.rows[0].user_id }, 'your_jwt_secret', {
+      expiresIn: '1h',
+    });
     res.json({ token });
   } catch (err) {
     res.status(500).send('Server error');

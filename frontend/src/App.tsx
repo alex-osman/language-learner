@@ -4,11 +4,11 @@ import Main from './pages/Main';
 
 const App: React.FC = () => {
   return (
-      <Router>
-        <Routes>
-          <Route path="/" element={<Main />} />
-        </Routes>
-      </Router>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Main />} />
+      </Routes>
+    </Router>
   );
 };
 
