@@ -9,7 +9,7 @@
     "prettier": "^3.3.2"
   },
   "scripts": {
-    "lint": "eslint 'backend/src/**/*.{ts,tsx}'",
-    "format": "prettier --write 'backend/src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'"
+    "lint": "eslint '*/src/**/*.{ts,tsx}'",
+    "format": "prettier --write '*/src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'"
   }
 }
